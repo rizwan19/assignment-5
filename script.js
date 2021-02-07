@@ -9,7 +9,7 @@ const getMeal = (meal) => {
             //console.log(meal);
             const tag = `
                 <div class="card" style="width: 15rem;">
-                    <img onclick="getDetail(${meal.idMeal})" src="${meal.strMealThumb}" class="card-img-top" alt="...">
+                    <img onclick="getDetail(${meal.idMeal})" src="${meal.strMealThumb}" class="card-img-top" alt="..."/>
                     <div class="card-body">
                         <h5 class="card-title">${meal.strMeal}</h5>
                     </div>
@@ -77,5 +77,11 @@ const getDetail = (idMeal) => {
             ul.appendChild(li);
         })
         detailArea.appendChild(ul);
+        goToTop(); // this method takes the window to the top
     })
 };
+
+// goes to top of the page
+const goToTop = () => {
+    window.scrollTo(0, 0);
+}
